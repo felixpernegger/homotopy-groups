@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { entryPath, formulaLatex, formulaText } from "@/lib/data";
+import { withBasePath } from "@/lib/paths";
 import type { CuratedCollection, GroupEntry, GroupKind, KnowledgeStatus, Stability } from "@/lib/types";
 import { MathText } from "./MathText";
 
@@ -121,7 +122,8 @@ export function ExploreClient({ entries, collections }: { entries: GroupEntry[];
     if (kMax) params.set("kMax", kMax);
     if (collection) params.set("collection", collection);
     const suffix = params.toString();
-    window.history.replaceState(null, "", suffix ? `/explore?${suffix}` : "/explore");
+    const explorePath = withBasePath("/explore");
+    window.history.replaceState(null, "", suffix ? `${explorePath}?${suffix}` : explorePath);
   }, [query, kinds, stabilities, prime, statuses, summands, nMin, nMax, mMin, mMax, kMin, kMax, collection]);
 
   const filtered = useMemo(() => {

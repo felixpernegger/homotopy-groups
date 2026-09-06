@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { entryPath, formulaLatex } from "@/lib/data";
+import { withBasePath } from "@/lib/paths";
 import type { GroupEntry } from "@/lib/types";
 import { MathText } from "./MathText";
 
@@ -18,7 +19,7 @@ function cellValue(entry: GroupEntry, mode: DisplayMode) {
 
 function Inspector({ entry, onClose }: { entry: GroupEntry; onClose: () => void }) {
   async function share() {
-    const url = `${window.location.origin}${entryPath(entry)}`;
+    const url = `${window.location.origin}${withBasePath(entryPath(entry))}`;
     if (navigator.share) await navigator.share({ title: "The Sphere Atlas", url });
     else await navigator.clipboard.writeText(url);
   }

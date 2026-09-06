@@ -11,6 +11,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Deploy to GitHub Pages
+
+Push `main`, then select **Settings → Pages → Build and deployment → GitHub Actions** in the repository once. The deployment workflow builds a static export, applies the repository base path, and publishes the generated site automatically.
+
 ## Verify
 
 ```bash

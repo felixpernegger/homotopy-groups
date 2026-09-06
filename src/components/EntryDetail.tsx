@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { GroupEntry, SourceRecord } from "@/lib/types";
 import { entryPath, formulaLatex } from "@/lib/data";
+import { withBasePath } from "@/lib/paths";
 import { MathText } from "./MathText";
 
 type Notation = "conventional" | "primary" | "source";
@@ -102,7 +103,7 @@ export function EntryDetail({ entry, source }: { entry: GroupEntry; source: Sour
           </div>
           <div className="entryActions">
             <button className="button ghostButton" onClick={share}>Share entry</button>
-            {repository ? <a className="button ghostButton" href={`${repository}/issues/new?title=${issueTitle}&body=${issueBody}`}>Report a correction</a> : <a className="button ghostButton" href="/about/data#corrections">Report a correction</a>}
+            {repository ? <a className="button ghostButton" href={`${repository}/issues/new?title=${issueTitle}&body=${issueBody}`}>Report a correction</a> : <a className="button ghostButton" href={withBasePath("/about/data#corrections")}>Report a correction</a>}
           </div>
         </aside>
       </div>

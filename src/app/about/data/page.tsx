@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { datasetMetadata } from "@/lib/data";
+import { withBasePath } from "@/lib/paths";
 
 export const metadata: Metadata = { title: "Data and sources" };
 
@@ -38,9 +39,9 @@ export default function DataPage() {
           <span className="eyebrow">Open data</span>
           <h2>Take the atlas with you</h2>
           <p>Downloads contain the normalized values used to render this edition.</p>
-          <a className="downloadLink" href="/data/groups.json"><span><b>JSON</b><small>Structured entries</small></span><strong>↓</strong></a>
-          <a className="downloadLink" href="/data/groups.csv"><span><b>CSV</b><small>Flat table export</small></span><strong>↓</strong></a>
-          <a className="downloadLink" href="/data/sources.json"><span><b>Sources</b><small>Provenance registry</small></span><strong>↓</strong></a>
+          <a className="downloadLink" href={withBasePath("/data/groups.json")}><span><b>JSON</b><small>Structured entries</small></span><strong>↓</strong></a>
+          <a className="downloadLink" href={withBasePath("/data/groups.csv")}><span><b>CSV</b><small>Flat table export</small></span><strong>↓</strong></a>
+          <a className="downloadLink" href={withBasePath("/data/sources.json")}><span><b>Sources</b><small>Provenance registry</small></span><strong>↓</strong></a>
           <dl><div><dt>Version</dt><dd>{datasetMetadata.datasetVersion}</dd></div><div><dt>Generated</dt><dd>{datasetMetadata.generatedDate}</dd></div><div><dt>License</dt><dd>Source facts with attribution</dd></div></dl>
         </aside>
       </div>

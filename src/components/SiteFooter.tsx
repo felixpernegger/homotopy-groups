@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { datasetMetadata } from "@/lib/data";
+import { withBasePath } from "@/lib/paths";
 
 export function SiteFooter() {
   return (
@@ -10,8 +11,8 @@ export function SiteFooter() {
       </div>
       <div className="footerLinks">
         <Link href="/about/data">Data &amp; sources</Link>
-        <a href="/data/groups.json">JSON</a>
-        <a href="/data/groups.csv">CSV</a>
+        <a href={withBasePath("/data/groups.json")}>JSON</a>
+        <a href={withBasePath("/data/groups.csv")}>CSV</a>
         <span>Dataset {datasetMetadata.datasetVersion}</span>
       </div>
     </footer>
