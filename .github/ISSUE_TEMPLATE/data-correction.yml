@@ -1,0 +1,26 @@
+name: Mathematical data correction
+description: Report a possible error or add a source for an entry in The Sphere Atlas.
+title: "[data] "
+labels: ["data", "needs review"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Entry URL or identifier
+      placeholder: https://example.org/groups/spheres/2/3
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: State exactly what appears to be wrong or incomplete.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Supporting source
+      description: Give a publication, page, DOI, or stable URL. Uncertainty labels require a source.
+    validations:
+      required: true

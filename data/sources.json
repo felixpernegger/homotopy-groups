@@ -1,0 +1,14 @@
+{
+  "datasetVersion": "2026.09.06",
+  "generatedDate": "2026-09-06",
+  "sources": [
+    {
+      "id": "bielefeld-toda",
+      "title": "Table of the homotopy groups π_{n+k}(S^n)",
+      "authors": ["Hiroshi Toda", "Jie Wu"],
+      "url": "https://www.math.uni-bielefeld.de/~sek/top/hopf/spheres.htm",
+      "citation": "Table transcribed from the Bielefeld presentation of data from Toda's Composition Methods in Homotopy Groups of Spheres.",
+      "accessed": "2026-09-06"
+    }
+  ]
+}
